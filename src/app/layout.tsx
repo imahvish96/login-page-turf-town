@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Hero from "@/components/Hero";
+import Toast from "@/components/Toast";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,10 +27,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://i.icomoon.io/public/temp/4bae7f1763/UntitledProject/style.css"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex justify-center items-center h-full">
+          <div className="flex flex-col justify-center gap-5 lg:flex-row w-full h-auto lg:h-[861px] overflow-hidden">
+            {children}
+            <Hero />
+          </div>
+        </div>
       </body>
     </html>
   );

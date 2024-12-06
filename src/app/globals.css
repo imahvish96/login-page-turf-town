@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/Nunito-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -9,19 +17,143 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #EBEBED;
+    --foreground: #000000;
   }
 }
 
-body {
+html, body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Nunito', sans-serif;
+  height: 100%;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  
+  @-webkit-keyframes slideInLeft {
+    0% {
+      -webkit-transform: translateX(-15%);
+      transform: translateX(-15%) translateY(-15%)  rotate(-4deg);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translateX(0) translateY(0) rotate(-4deg);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    0% {
+      -webkit-transform: translateX(-15%);
+      transform: translateX(-15%) translateY(-15%)  rotate(-4deg);
+      visibility: visible;
+      opacity: 0.8;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0) translateY(0) rotate(-4deg);
+      opacity: 1;
+    }
+  } 
+
+  .slideInRight {
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    
+    @-webkit-keyframes slideInRight {
+      0% {
+        -webkit-transform: translateX(15%) translateY(15%)  rotate(8deg);
+        transform: translateX(15%) translateY(15%)  rotate(8deg);
+        visibility: visible;
+      }
+      100% {
+        -webkit-transform: translateX(0) translateY(0) rotate(8deg);
+        transform: translateX(0);
+      }
+    }
+  
+    @keyframes slideInRight {
+      0% {
+        -webkit-transform: translateX(15%) translateY(15%)  rotate(8deg);
+        transform: translateX(15%) translateY(15%)  rotate(8deg);
+        visibility: visible;
+        opacity: 0.8;
+      }
+      100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0) translateY(0) rotate(8deg);
+        opacity: 1;
+      }
+    } 
+
+    .fadeIn {
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      }
+      
+      @-webkit-keyframes fadeIn {
+        0% {
+          visibility: visible;
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    
+      @keyframes fadeIn {
+        0% {
+          visibility: visible;
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      } 
+
+      .slideUp {
+        animation: slideUp 1s ease forwards; /* Adjust timing as needed */
+      }
+        
+        @keyframes slideUp {
+          0% {
+            visibility: visible;
+            opacity: 0;
+            transform: translateY(50px); /* Slide up effect */
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+  
+
+
+    input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
