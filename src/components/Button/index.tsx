@@ -15,7 +15,6 @@ type Props = {
 
 function Button({
   label,
-  icon,
   src,
   classes,
   disabled,

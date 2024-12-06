@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <Landing setIsCodeSend={setIsCodeSend} />
+      <Landing />
       {isCodeSend && <Toast />}
     </>
   );

@@ -1,6 +1,6 @@
 import { INCORRECT_OTP } from "@/constants";
 import Image from "next/image";
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 function Input({
   type,
@@ -10,7 +10,7 @@ function Input({
   value,
 }: {
   type?: "phone" | "otp";
-  onChange?: any;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   isError?: boolean;
   placeholder?: string;
   value: string;
