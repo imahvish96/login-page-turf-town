@@ -1,6 +1,6 @@
 "use client";
 
-import Landing from "@/components/Landing";
+import Welcome from "@/components/Welcome";
 import Toast from "@/components/Toast";
 import { useEffect, useState } from "react";
 
@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <Landing />
+      <Welcome />
       {isCodeSend && <Toast />}
     </>
   );

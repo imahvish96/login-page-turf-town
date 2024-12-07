@@ -1,12 +1,13 @@
 "use client";
 
 import React, { ChangeEvent, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import LoginHeader from "@/components/LoginHeader";
 import { OTP_TITLE, OTP_MESSAGE, OTP_PLACEHOLDER } from "@/constants";
 
-function Landing({
+function Verify({
   setIsCodeSend,
 }: {
   setIsCodeSend: React.Dispatch<React.SetStateAction<boolean>>;
@@ -16,6 +17,9 @@ function Landing({
   const [showOtpError, setShowOtpError] = useState(false);
   const [timerStart, setTimerStart] = useState(false);
   const [timer, setTimer] = useState(60);
+  const router = useSearchParams();
+
+  const phoneNumber = router.get("data");
 
   useEffect(() => {
     if (timer === 0) {
@@ -35,7 +39,10 @@ function Landing({
   return (
     <div className="w-full max-w-[800px] lg:w-[55%] mt-[135px] p-4">
       <div className="flex flex-col items-center">
-        <LoginHeader title={OTP_TITLE} message={OTP_MESSAGE("0000000000")} />
+        <LoginHeader
+          title={OTP_TITLE}
+          message={OTP_MESSAGE(phoneNumber as string)}
+        />
         <div className="w-[514px]">
           <Input
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
@@ -88,4 +95,4 @@ function Landing({
   );
 }
 
-export default Landing;
+export default Verify;

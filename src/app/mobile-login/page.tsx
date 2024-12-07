@@ -9,8 +9,9 @@ import {
   PHONE_NUMBER_MESSAGE,
   MOBILE_NUMBER_PLACEHOLDER,
 } from "@/constants";
+import { useRouter } from "next/navigation";
 
-function Landing() {
+function Welcome() {
   const [isValidPhoneNumber, setIsValidPhoneNumber] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -43,7 +44,7 @@ function Landing() {
               classes="mt-3"
               disabled={isValidPhoneNumber}
               variant="secondary"
-              route="/verify"
+              route={`/verify?data=${phoneNumber}`}
             />
           </div>
         </div>
@@ -52,4 +53,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default Welcome;

@@ -32,9 +32,7 @@ function Input({
               height={100}
             />
           </div>
-          <div className="text-gray-600 font-medium w-6/12 text-center">
-            + 91
-          </div>
+          <div className="text-gray-600 w-6/12 text-center font-bold">+ 91</div>
         </div>
       )}
       {type !== "otp" && (
