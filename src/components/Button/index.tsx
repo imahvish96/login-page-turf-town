@@ -18,7 +18,7 @@ function Button({
   src,
   classes,
   disabled,
-  route = "/",
+  route = "",
   variant,
   onClick,
 }: Props) {

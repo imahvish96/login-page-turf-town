@@ -41,7 +41,7 @@ function Input({
           placeholder={placeholder}
           onChange={onChange}
           value={value}
-          className={`flex-1 border-2 outline-none rounded-lg shadow-md p-2 px-5 h-[56px]  ${
+          className={`flex-1 border-2 outline-none rounded-lg shadow-md p-2 px-5 h-[56px] font-bold  ${
             type ? "ml-4 w-full max-w-[324px]" : "w-[476px]"
           } ${
             isError
@@ -60,10 +60,11 @@ function Input({
           }`}
         >
           <input
-            type="number"
+            type="text"
             placeholder={placeholder}
-            className="h-[36px] outline-none bg-transparent"
+            className="w-[70%] h-[36px] outline-none bg-transparent font-bold"
             onChange={onChange}
+            value={value}
           />
           {isError && <span className="text-[#FF6868]">{INCORRECT_OTP}</span>}
         </div>
