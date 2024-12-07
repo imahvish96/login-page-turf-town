@@ -23,15 +23,13 @@ export default function RootLayout({
 }>) {
   const [loading, setLoading] = useState(false);
 
-  // @ts-ignore
-  /* eslint-disable-next-line */
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(true);
       console.log(loading);
     }, 2000);
     return () => clearTimeout(timeout);
-  }, []);
+  });
 
   return (
     <html lang="en">
