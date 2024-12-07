@@ -1,17 +1,23 @@
 "use client";
 
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, {
+  ChangeEvent,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { useSearchParams } from "next/navigation";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import LoginHeader from "@/components/LoginHeader";
 import { OTP_TITLE, OTP_MESSAGE, OTP_PLACEHOLDER } from "@/constants";
 
-function Verify({
-  setIsCodeSend,
-}: {
-  setIsCodeSend: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+interface Porps {
+  setIsCodeSend: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function Verify({ setIsCodeSend }: Porps) {
   const [isValidOtp, setIsValidOtp] = useState(true);
   const [otpValue, setOtpValue] = useState("");
   const [showOtpError, setShowOtpError] = useState(false);
@@ -94,5 +100,3 @@ function Verify({
     </div>
   );
 }
-
-export default Verify;
