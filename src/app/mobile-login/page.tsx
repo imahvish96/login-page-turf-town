@@ -9,7 +9,6 @@ import {
   PHONE_NUMBER_MESSAGE,
   MOBILE_NUMBER_PLACEHOLDER,
 } from "@/constants";
-import { useRouter } from "next/navigation";
 
 function Welcome() {
   const [isValidPhoneNumber, setIsValidPhoneNumber] = useState(true);
