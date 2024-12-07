@@ -54,7 +54,7 @@ export default function Verify() {
           <div className="w-[514px]">
             <Input
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                let value = e.target.value.replace(/\s/g, "");
+                const value = e.target.value.replace(/\s/g, "");
                 if (e.target.value.length <= 6) {
                   const formattedValue = value.split("").join(" ");
                   setOtpValue(formattedValue);
