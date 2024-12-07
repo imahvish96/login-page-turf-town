@@ -58,7 +58,7 @@ export default function RootLayout({
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center w-full max-w-[800px] lg:w-[55%] mt-[135px] p-4">
+                <div className="flex flex-col items-center w-full max-w-[800px] lg:w-[55%] mt-[135px] p-4 md:hidden sm:hidden">
                   <div className="w-[514px]"></div>
                 </div>
               </>

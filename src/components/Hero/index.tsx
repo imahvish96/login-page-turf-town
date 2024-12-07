@@ -1,7 +1,8 @@
+import "./style.css";
 function Hero() {
   return (
     <>
-      <div className="relative w-[45%] max-w-[1024px] h-full flex flex-col items-center">
+      <div className="relative w-[45%] max-w-[1024px] h-full flex flex-col items-center hero">
         {/* Two overlapping divs */}
         <div className="relative w-full h-[553px]">
           <div
